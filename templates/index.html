@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUCATION QUIZ</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- DEKORASI LATAR -->
+    <div class="decoration star star-one">✦</div>
+    <div class="decoration star star-two">✧</div>
+    <div class="decoration star star-three">★</div>
+    <div class="decoration cloud cloud-one">☁</div>
+    <div class="decoration cloud cloud-two">☁</div>
+
+    <!-- 1. HALAMAN BERANDA -->
+    <section id="home-page" class="page active">
+
+        <header class="top-header">
+            <div class="logo">🎓 EDUCATION QUIZ</div>
+            <div class="header-label">🎮 Bermain • Belajar • Berkembang</div>
+        </header>
+
+        <div class="home-content">
+
+            <div class="mascot mascot-girl">
+                <span>👩🏻‍🎓</span>
+                <p>Ayo Belajar!</p>
+            </div>
+
+            <div class="home-info">
+                <p class="small-title">SELAMAT DATANG DI</p>
+                <h1>EDUCATION<br><span>QUIZ</span></h1>
+
+                <p class="subtitle">
+                    Uji pengetahuanmu dan raih skor tertinggi!
+                </p>
+
+                <div class="feature-icons">
+                    <span>💻 Teknologi</span>
+                    <span>📚 Edukasi</span>
+                    <span>🏆 Tantangan</span>
+                </div>
+
+                <button id="start-button" class="main-button">
+                    ▶ MULAI PERMAINAN
+                </button>
+            </div>
+
+        </div>
+
+        <footer class="team-card">
+            <h3>👥 KELOMPOK 10</h3>
+            <p>Muhammad Halim Putra Pratama</p>
+            <p>Zuhrida Setiya Rahmadhani</p>
+        </footer>
+
+    </section>
+
+
+    <!-- 2. HALAMAN INPUT NAMA -->
+    <section id="name-page" class="page">
+
+        <div class="page-header">
+            <span class="logo">🎓 EDUCATION QUIZ</span>
+            <button class="home-button" data-page="home-page">⌂</button>
+        </div>
+
+        <div class="name-content">
+
+            <div class="mascot mascot-boy">
+                <span>👨🏻‍🎓</span>
+                <p>Halo, Teman!</p>
+            </div>
+
+            <div class="form-card">
+                <h2>Masukkan Nama Kamu!</h2>
+                <p>Siapkan dirimu untuk memulai permainan.</p>
+
+                <input
+                    type="text"
+                    id="player-name"
+                    placeholder="✎ Nama pemain"
+                    maxlength="30"
+                >
+
+                <button id="continue-button" class="main-button">
+                    LANJUTKAN →
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 3. HALAMAN PERMAINAN -->
+    <section id="quiz-page" class="page">
+
+        <header class="game-header">
+            <div class="status-item">⭐ Skor: <span id="score">100</span></div>
+            <div class="status-item">❤️ Nyawa: <span id="lives">5</span></div>
+            <div class="status-item">⏱ Waktu: <span id="timer">25</span> detik</div>
+        </header>
+
+        <div class="quiz-layout">
+
+            <div class="mascot mascot-thinking">
+                <span>👩🏻‍💻</span>
+                <p>Tetap Semangat!</p>
+            </div>
+
+            <div class="question-card">
+
+                <div class="question-number">
+                    SOAL <span id="question-number">1</span> DARI 20
+                </div>
+
+                <h2 id="question-text">
+                    Pertanyaan akan muncul di sini.
+                </h2>
+
+                <div id="answer-options" class="answer-options">
+                    <button class="answer-button">A. Pilihan A</button>
+                    <button class="answer-button">B. Pilihan B</button>
+                    <button class="answer-button">C. Pilihan C</button>
+                    <button class="answer-button">D. Pilihan D</button>
+                </div>
+
+                <p id="feedback"></p>
+
+                <button id="next-button" class="main-button" hidden>
+                    SOAL BERIKUTNYA →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 4. HALAMAN HASIL -->
+    <section id="result-page" class="page">
+
+        <div class="page-header">
+            <span class="logo">🎓 EDUCATION QUIZ</span>
+        </div>
+
+        <div class="result-layout">
+
+            <div class="mascot mascot-winner">
+                <span>👨🏻‍🎓🏆</span>
+                <p>Kerja Bagus!</p>
+            </div>
+
+            <div class="result-card">
+
+                <div class="crown">👑</div>
+
+                <h1 id="result-title">SELAMAT!</h1>
+
+                <p>Permainan telah selesai.</p>
+
+                <div class="final-score">
+                    <span>SKOR AKHIR</span>
+                    <strong id="final-score">100</strong>
+                </div>
+
+                <p id="result-message">
+                    Terus belajar dan tingkatkan pengetahuanmu!
+                </p>
+
+                <div class="result-buttons">
+                    <button id="menu-button" class="main-button">
+                        🏠 KEMBALI KE BERANDA
+                    </button>
+
+                    <button id="leaderboard-button" class="main-button">
+                        🏆 PAPAN PERINGKAT
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- 5. HALAMAN PAPAN PERINGKAT -->
+    <section id="leaderboard-page" class="page">
+
+        <div class="page-header">
+            <span class="logo">🎓 EDUCATION QUIZ</span>
+            <button class="home-button" data-page="home-page">⌂</button>
+        </div>
+
+        <div class="leaderboard-layout">
+
+            <div class="leaderboard-mascots">
+                <span>👩🏻‍🎓</span>
+                <span>👨🏻‍🎓</span>
+                <p>Terus Belajar!</p>
+            </div>
+
+            <div class="leaderboard-card">
+
+                <h1>🏆 PAPAN PERINGKAT</h1>
+                <p>5 PEMAIN TERBAIK</p>
+
+                <div class="leaderboard-heading">
+                    <span>Peringkat</span>
+                    <span>Nama Pemain</span>
+                    <span>Skor</span>
+                </div>
+
+                <div id="leaderboard-list">
+                    <p class="empty-board">Belum ada data pemain.</p>
+                </div>
+
+                <button id="back-home-button" class="main-button">
+                    🏠 KEMBALI KE BERANDA
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
