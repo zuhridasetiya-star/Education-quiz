@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+:root {
+    --blue: #397fc9;
+    --dark-blue: #24558f;
+    --light-blue: #eaf5ff;
+    --soft-blue: #d5eaff;
+    --white: #ffffff;
+    --yellow: #ffd66e;
+    --text: #31577f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 10% 15%, #ffffff 0 5%, transparent 5.5%),
+        radial-gradient(circle at 90% 75%, #ffffff 0 7%, transparent 7.5%),
+        linear-gradient(135deg, #d9edff, #eff8ff, #c6e2ff);
+    overflow-x: hidden;
+}
+
+/* DEKORASI LATAR */
+
+.decoration {
+    position: fixed;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    color: var(--yellow);
+    font-size: 38px;
+    text-shadow: 0 3px 0 #ffffff;
+}
+
+.star-one {
+    top: 18%;
+    left: 5%;
+}
+
+.star-two {
+    top: 65%;
+    right: 8%;
+    font-size: 55px;
+}
+
+.star-three {
+    top: 8%;
+    right: 15%;
+    font-size: 25px;
+}
+
+.cloud {
+    color: rgba(255,255,255,0.75);
+    font-size: 100px;
+}
+
+.cloud-one {
+    bottom: 2%;
+    left: -25px;
+}
+
+.cloud-two {
+    top: 35%;
+    right: -30px;
+}
+
+/* PENGATURAN HALAMAN */
+
+.page {
+    display: none;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding: 25px 6%;
+    animation: appear 0.5s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HEADER */
+
+.top-header,
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--dark-blue);
+}
+
+.header-label {
+    background: white;
+    padding: 10px 22px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px #91bde455;
+    font-weight: 800;
+}
+
+/* HALAMAN BERANDA */
+
+.home-content {
+    max-width: 1050px;
+    margin: 65px auto 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+}
+
+.mascot {
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.mascot span {
+    display: block;
+    font-size: 155px;
+    filter: drop-shadow(0 12px 8px #6696bd55);
+    animation: float 3s ease-in-out infinite;
+}
+
+.mascot p {
+    display: inline-block;
+    background: white;
+    color: var(--blue);
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-weight: 900;
+    box-shadow: 0 4px 12px #8cb8dc55;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.home-info {
+    text-align: center;
+    max-width: 560px;
+}
+
+.small-title {
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #6699c9;
+}
+
+.home-info h1 {
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 0.95;
+    color: var(--dark-blue);
+    font-weight: 900;
+    text-shadow: 3px 5px 0 white;
+    margin: 12px 0;
+}
+
+.home-info h1 span {
+    color: #559be2;
+}
+
+.subtitle {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.feature-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.feature-icons span {
+    background: white;
+    padding: 9px 15px;
+    border-radius: 25px;
+    font-weight: 800;
+    box-shadow: 0 4px 12px #9cbfdd55;
+}
+
+.main-button {
+    background: linear-gradient(135deg, #69a9ec, #397fc9);
+    color: white;
+    border: 3px solid white;
+    border-radius: 35px;
+    padding: 15px 35px;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #2d67a6, 0 10px 20px #80add855;
+    transition: 0.25s;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 0 #2d67a6, 0 14px 22px #80add855;
+}
+
+.team-card {
+    width: fit-content;
+    margin: 35px auto 0;
+    padding: 16px 35px;
+    background: rgba(255,255,255,0.9);
+    border: 2px solid white;
+    border-radius: 22px;
+    text-align: center;
+    box-shadow: 0 7px 20px #8ab5d655;
+    line-height: 1.6;
+}
+
+.team-card h3 {
+    color: var(--dark-blue);
+}
+
+/* HALAMAN INPUT NAMA */
+
+.name-content {
+    max-width: 950px;
+    margin: 90px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.mascot-boy span {
+    font-size: 170px;
+}
+
+.form-card,
+.question-card,
+.result-card,
+.leaderboard-card {
+    background: rgba(255,255,255,0.94);
+    border: 3px solid white;
+    border-radius: 30px;
+    padding: 35px;
+    box-shadow: 0 12px 30px #83add055;
+}
+
+.form-card {
+    width: min(100%, 500px);
+    text-align: center;
+}
+
+.form-card h2 {
+    color: var(--dark-blue);
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.form-card p {
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #c1def8;
+    border-radius: 30px;
+    outline: none;
+    font-size: 16px;
+    margin-bottom: 22px;
+}
+
+input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 4px #c9e5ff;
+}
+
+.form-card .main-button {
+    width: 100%;
+}
+
+/* HALAMAN PERMAINAN */
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 25px auto 45px;
+    max-width: 1000px;
+}
+
+.status-item {
+    background: white;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-weight: 900;
+    color: var(--dark-blue);
+    box-shadow: 0 5px 15px #90b8db55;
+}
+
+.quiz-layout {
+    max-width: 1050px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.mascot-thinking span {
+    font-size: 135px;
+}
+
+.question-card {
+    flex: 1;
+    max-width: 650px;
+    text-align: center;
+    position: relative;
+}
+
+.question-number {
+    display: inline-block;
+    background: #5b9be0;
+    color: white;
+    padding: 10px 28px;
+    border-radius: 30px;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.question-card h2 {
+    font-size: 23px;
+    color: var(--dark-blue);
+    margin-bottom: 25px;
+}
+
+.answer-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.answer-button {
+    background: #f1f8ff;
+    color: var(--dark-blue);
+    border: 2px solid #c5e0fb;
+    border-radius: 18px;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.answer-button:hover {
+    background: #d7ebff;
+    transform: translateY(-3px);
+}
+
+.answer-button.correct {
+    background: #c9f2d7;
+    border-color: #65c58a;
+}
+
+.answer-button.wrong {
+    background: #ffd8d8;
+    border-color: #ed8585;
+}
+
+.answer-button:disabled {
+    cursor: default;
+}
+
+#feedback {
+    font-weight: 900;
+    margin: 18px 0;
+    min-height: 24px;
+}
+
+/* HALAMAN HASIL */
+
+.result-layout {
+    max-width: 1000px;
+    margin: 75px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+}
+
+.mascot-winner span {
+    font-size: 160px;
+}
+
+.result-card {
+    text-align: center;
+    width: min(100%, 550px);
+}
+
+.crown {
+    font-size: 55px;
+}
+
+.result-card h1 {
+    color: var(--blue);
+    font-size: 40px;
+    margin: 5px 0 10px;
+}
+
+.final-score {
+    background: #e3f1ff;
+    border: 3px dashed #8ab9ec;
+    border-radius: 25px;
+    padding: 18px;
+    margin: 22px 0;
+}
+
+.final-score span,
+.final-score strong {
+    display: block;
+}
+
+.final-score span {
+    font-weight: 900;
+}
+
+.final-score strong {
+    font-size: 55px;
+    color: var(--dark-blue);
+}
+
+.result-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.result-buttons .main-button {
+    font-size: 13px;
+    padding: 13px 18px;
+}
+
+/* HALAMAN LEADERBOARD */
+
+.leaderboard-layout {
+    max-width: 1050px;
+    margin: 60px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.leaderboard-mascots span {
+    font-size: 95px;
+    display: inline-block;
+    filter: drop-shadow(0 8px 8px #6696bd55);
+}
+
+.leaderboard-mascots p {
+    text-align: center;
+    font-weight: 900;
+}
+
+.leaderboard-card {
+    width: min(100%, 650px);
+    text-align: center;
+}
+
+.leaderboard-card h1 {
+    color: var(--dark-blue);
+    font-size: 32px;
+}
+
+.leaderboard-card > p {
+    font-weight: 900;
+    margin: 5px 0 25px;
+}
+
+.leaderboard-heading,
+.leaderboard-row {
+    display: grid;
+    grid-template-columns: 0.7fr 2fr 0.8fr;
+    align-items: center;
+    gap: 10px;
+    padding: 13px;
+}
+
+.leaderboard-heading {
+    background: #dceeff;
+    border-radius: 15px;
+    font-weight: 900;
+}
+
+.leaderboard-row {
+    border-bottom: 1px solid #dceaff;
+    font-weight: 800;
+}
+
+.leaderboard-row:first-child {
+    color: #c28a16;
+}
+
+.empty-board {
+    padding: 30px 10px;
+    color: #7898b5;
+}
+
+.leaderboard-card .main-button {
+    margin-top: 25px;
+}
+
+/* RESPONSIVE HP DAN TABLET */
+
+@media (max-width: 700px) {
+
+    .page {
+        padding: 20px 5%;
+    }
+
+    .top-header {
+        align-items: flex-start;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .header-label {
+        font-size: 11px;
+        padding: 8px 12px;
+    }
+
+    .home-content,
+    .name-content,
+    .quiz-layout,
+    .result-layout,
+    .leaderboard-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .mascot span {
+        font-size: 110px;
+    }
+
+    .mascot-boy span,
+    .mascot-winner span {
+        font-size: 115px;
+    }
+
+    .home-info h1 {
+        font-size: 52px;
+    }
+
+    .team-card {
+        width: 100%;
+        padding: 15px;
+        font-size: 13px;
+    }
+
+    .form-card,
+    .question-card,
+    .result-card,
+    .leaderboard-card {
+        padding: 23px 17px;
+    }
+
+    .game-header {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .status-item {
+        padding: 10px 13px;
+        font-size: 13px;
+    }
+
+    .answer-options {
+        grid-template-columns: 1fr;
+    }
+
+    .question-card h2 {
+        font-size: 19px;
+    }
+
+    .result-card h1 {
+        font-size: 32px;
+    }
+
+    .leaderboard-mascots span {
+        font-size: 65px;
+    }
+
+    .leaderboard-card h1 {
+        font-size: 25px;
+    }
+
+    .leaderboard-heading,
+    .leaderboard-row {
+        font-size: 13px;
+        padding: 11px 5px;
+    }
+}
